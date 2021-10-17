@@ -132,28 +132,27 @@ app.post('/setcontent', (req, res) => {
     console.log('nowtime : ' + nowtime);
     console.log('visible : ' + visible);
 
-    ///////////////////////////////////////this///////////////////////////////////////
     var resultTitle = 'no';
     var resultMessage = '뭔가 모를 에러입니다';
     if (siteKey == 'secretKey') {//사이트키확인
         console.log('secretKey ok');
         if (flag == '') {//플레이그 확인
-        } else if (flag == 'signup') {
+        } else if (flag == 'setcontent') {
             console.log('flag-ok');
 
             const jsonFile = fs.readFileSync('./content.json', 'utf8');
             var jsonData = JSON.parse(jsonFile);
 
-
-            jsonData['users'].push({ "id": id, "name": name, "pass": pass });
+            jsonData['maindash'].push({
+                "userid": id, "content": content,
+                "createtime": nowtime, "visible": visible,
+            });
             const jsonFinalData = JSON.stringify(jsonData);
-            fs.writeFileSync('./user.json', jsonFinalData, 'utf8', function (err) {
+            fs.writeFileSync('./content.json', jsonFinalData, 'utf8', function (err) {
                 console.log('write err:' + err);
             });
             resultTitle = 'pass';
             resultMessage = 'ok';
-
-
         } else {//플래그 다를떄
             resultTitle = 'diffrent flag';
             resultMessage = 'check flag';
