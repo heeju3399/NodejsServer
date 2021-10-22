@@ -1,0 +1,26 @@
+{
+    "maindashcontent": [
+        {
+            "userid": "admin",
+            "content": "[48, 48, 48, 48, 48, 48]",
+            "contentid": 9,
+            "createtime": "2021-10-18 13:36:49.717",
+            "visible": "0",
+            "like": 6,
+            "bad": 0,
+            "view": 0,
+            "comment": []
+        },
+        {
+            "userid": "admin",
+            "content": "[49, 49, 49, 49, 49, 49, 49, 49, 49, 49]",
+            "contentid": 1,
+            "createtime": "2021-10-16 21:25:03.487",
+            "visible": "0",
+            "like": 0,
+            "bad": 0,
+            "view": 0,
+            "comment": []
+        }
+    ]
+}
